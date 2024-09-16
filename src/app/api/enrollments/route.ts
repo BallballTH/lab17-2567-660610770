@@ -28,7 +28,7 @@ export const GET = async (request:NextRequest) => {
   //check if user provide one of 'studentId' or 'courseNo'
   //User must not provide both values, and must not provide nothing
 
-  if(studentId && courseNo) {
+  if((studentId && courseNo) ||(!studentId && !courseNo) ) {
     return NextResponse.json(
       {
         ok: false,
